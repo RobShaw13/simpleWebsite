@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First Reliance Bank | About Us and Contact</title>
+
+    <!-- Author: Rob Shaw | Date: November 8, 2026 -->
+
+    <style>
+        :root {
+            --navy: #17365d;
+            --page: #f0f3f7;
+            --ink: #333333;
+            --line: #cccccc;
+            --cream: #fff0c2;
+            --gold: #b8892a;
+            --muted: #5a6675;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: var(--page);
+            color: var(--ink);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        a { color: var(--navy); }
+        a:focus-visible, button:focus-visible, input:focus-visible,
+        select:focus-visible, textarea:focus-visible, summary:focus-visible {
+            outline: 3px solid var(--gold);
+            outline-offset: 2px;
+        }
+        ::selection { background: var(--cream); color: var(--navy); }
+
+        header {
+            background-color: var(--navy);
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+        header h1 { margin: 0 0 4px; }
+        header p { margin: 0 0 12px; }
+
+        nav a { color: white; margin: 10px; }
+        nav a[aria-current="page"] { font-weight: bold; text-underline-offset: 6px; }
+
+        main { max-width: 850px; margin: auto; padding: 25px; }
+
+        h2 { color: var(--navy); margin: 0 0 8px; }
+        h3 { color: var(--navy); margin: 0 0 4px; }
+        p { margin: 0 0 12px; }
+
+        section + section { margin-top: 48px; }
+
+        img {
+            display: block;
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            margin: 20px auto;
+            border-radius: 8px;
+        }
+
+        .panel {
+            background: white;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            padding: 22px;
+        }
+
+        /* Origin story */
+        .story { max-width: 66ch; }
+        .story p { margin-bottom: 14px; }
+
+        /* Team */
+        .team { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+        .person h3 { margin-top: 12px; }
+        .role { color: var(--muted); font-size: .92rem; margin-bottom: 10px; }
+        .avatar {
+            width: 64px; height: 64px;
+            border-radius: 50%;
+            background: var(--navy);
+            color: var(--cream);
+            display: grid; place-items: center;
+            font-weight: bold; font-size: 1.3rem;
+        }
+
+        /* Contact */
+        .contact { display: grid; grid-template-columns: 1fr 1.2fr; gap: 20px; align-items: start; }
+        .details { list-style: none; margin: 0 0 14px; padding: 0; }
+        .details li { padding: 10px 0; }
+        .details li + li { border-top: 1px solid var(--line); }
+        .label { display: block; font-size: .85rem; color: var(--muted); }
+
+        form label { display: block; font-weight: bold; margin: 14px 0 4px; color: var(--navy); }
+        form label:first-of-type { margin-top: 0; }
+        input, select, textarea {
+            width: 100%;
+            font: inherit;
+            padding: 10px 12px;
+            border: 1px solid #8a94a1;
+            border-radius: 8px;
+            background: white;
+            color: var(--ink);
+        }
+        textarea { min-height: 110px; resize: vertical; }
+        .btn {
+            margin-top: 16px;
+            font: inherit;
+            font-weight: bold;
+            background: var(--navy);
+            color: white;
+            border: 0;
+            border-radius: 8px;
+            padding: 12px 24px;
+            cursor: pointer;
+            transition: background-color .2s ease-out;
+        }
+        .btn:hover { background: #24497b; }
+        .thanks { background: var(--cream); border-radius: 8px; padding: 14px 16px; margin-top: 16px; }
+        .thanks[hidden] { display: none; }
+        .note { font-size: .85rem; color: var(--muted); margin: 10px 0 0; }
+
+        /* Hours + FAQ */
+        .hours { width: 100%; border-collapse: collapse; background: white; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+        .hours th, .hours td { text-align: left; padding: 10px 16px; border-top: 1px solid var(--line); }
+        .hours tr:first-child th, .hours tr:first-child td { border-top: 0; }
+        .hours th { color: var(--navy); font-weight: bold; }
+
+        details {
+            background: white;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+        summary {
+            cursor: pointer;
+            padding: 14px 18px;
+            font-weight: bold;
+            color: var(--navy);
+        }
+        details p { padding: 0 18px 14px; margin: 0; }
+
+        footer {
+            background-color: var(--navy);
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 48px;
+        }
+        footer p { margin: 4px 0; }
+
+        @media (max-width: 720px) {
+            .team, .contact { grid-template-columns: 1fr; }
+            main { padding: 18px; }
+        }
+        @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>First Reliance Bank</h1>
+        <p>Banking for your everyday life and your next big goal.</p>
+
+        <nav aria-label="Main">
+            <a href="index.html">Home</a>
+            <a href="page2.html">Products &amp; Services</a>
+            <a href="page3.html" aria-current="page">About Us &amp; Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section aria-labelledby="story-title">
+            <h2 id="story-title">Our Story</h2>
+            <div class="story">
+                <p>
+                    First Reliance Bank opened in Florence, South Carolina, in 1999 with a simple idea:
+                    people should be able to ask their banker a question and get a real answer from someone
+                    who lives down the road.
+                </p>
+                <p>
+                    Back then, good financial guidance was hard to come by unless you already knew the right person.
+                    We set out to change that, one account and one handshake at a time. Today we serve families,
+                    homebuyers, and small businesses in Columbia, West Columbia, Lexington, Florence, Greenville,
+                    Myrtle Beach, and Mount Pleasant, and we still answer questions the same way.
+                </p>
+            </div>
+            <img src="branch.svg" alt="Illustration of a First Reliance Bank branch with white columns and a flag">
+        </section>
+
+        <section aria-labelledby="team-title">
+            <h2 id="team-title">Meet the Team</h2>
+            <div class="team">
+                <article class="panel person">
+                    <div class="avatar" aria-hidden="true">ZL</div>
+                    <h3>Zaiah Levitt</h3>
+                    <p class="role">Commercial Loan Officer</p>
+                    <p>Works with local business owners on financing for equipment, real estate, and daily operations.</p>
+                </article>
+                <article class="panel person">
+                    <div class="avatar" aria-hidden="true">RS</div>
+                    <h3>Rob Shaw</h3>
+                    <p class="role">Branch Operations Manager</p>
+                    <p>Keeps the branch running smoothly and points every customer to the right person for help.</p>
+                </article>
+                <article class="panel person">
+                    <div class="avatar" aria-hidden="true">JC</div>
+                    <h3>John Cicala</h3>
+                    <p class="role">Information Systems Analyst</p>
+                    <p>Maintains the banking systems and keeps customer information secure and easy to reach.</p>
+                </article>
+            </div>
+        </section>
+
+        <section aria-labelledby="contact-title">
+            <h2 id="contact-title">Get in Touch</h2>
+            <p>Questions about an account, a loan, or this new-customer offer? Send us a note or stop by.</p>
+            <div class="contact">
+                <div class="panel">
+                    <ul class="details">
+                        <li><span class="label">Email</span><a href="mailto:hello@firstreliance.example">hello@firstreliance.example</a></li>
+                        <li><span class="label">Phone</span><a href="tel:+18035550142">(803) 555-0142</a></li>
+                        <li><span class="label">Main branch</span>120 Main Street, Columbia, SC 29201</li>
+                        <li><span class="label">Social</span>@FirstRelianceBank on Instagram and Facebook</li>
+                    </ul>
+                    <p class="note">All contact details are fictional for this class project.</p>
+                </div>
+
+                <form class="panel" id="contact-form" aria-labelledby="contact-title">
+                    <label for="name">Your name</label>
+                    <input id="name" name="name" type="text" autocomplete="name" required>
+
+                    <label for="email">Email address</label>
+                    <input id="email" name="email" type="email" autocomplete="email" required>
+
+                    <label for="topic">What can we help with?</label>
+                    <select id="topic" name="topic">
+                        <option>Opening an account</option>
+                        <option>Home mortgage</option>
+                        <option>Business loan</option>
+                        <option>Something else</option>
+                    </select>
+
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required></textarea>
+
+                    <button class="btn" type="submit">Send Message</button>
+                    <p class="thanks" id="thanks" role="status" hidden>Thank you! A member of our team will reply within one business day.</p>
+                    <p class="note">This demo form does not send anything.</p>
+                </form>
+            </div>
+        </section>
+
+        <section aria-labelledby="hours-title">
+            <h2 id="hours-title">Hours of Operation</h2>
+            <table class="hours">
+                <tr><th scope="row">Monday to Friday</th><td>9:00 AM to 5:00 PM</td></tr>
+                <tr><th scope="row">Saturday</th><td>9:00 AM to 12:00 PM</td></tr>
+                <tr><th scope="row">Sunday</th><td>Closed (online and mobile banking always available)</td></tr>
+            </table>
+        </section>
+
+        <section aria-labelledby="faq-title">
+            <h2 id="faq-title">Frequently Asked Questions</h2>
+            <details>
+                <summary>What do I need to open a checking account?</summary>
+                <p>A photo ID, your Social Security number, and an opening deposit. Mention code WELCOME50 for the new customer special.</p>
+            </details>
+            <details>
+                <summary>Can I meet with a banker without an appointment?</summary>
+                <p>Yes, during branch hours. For loans, an appointment with our commercial loan officer lets us give you our full attention.</p>
+            </details>
+            <details>
+                <summary>How does First Reliance keep my information safe?</summary>
+                <p>Our information systems analyst monitors our systems and makes sure only the right people can see your account information.</p>
+            </details>
+            <details>
+                <summary>Do you have an app?</summary>
+                <p>Yes. Online and mobile banking let you check balances, move money, and deposit checks any time.</p>
+            </details>
+            <details>
+                <summary>Is this a real bank?</summary>
+                <p>No. This website and everything on it is a fictional student project.</p>
+            </details>
+        </section>
+    </main>
+
+    <footer>
+        <p>First Reliance Bank | Student Website Project</p>
+        <p>All features and promotions shown are fictional for this assignment.</p>
+    </footer>
+
+    <script>
+        document.getElementById("contact-form").addEventListener("submit", function (e) {
+            e.preventDefault();
+            document.getElementById("thanks").hidden = false;
+            this.reset();
+        });
+    </script>
+</body>
+</html>

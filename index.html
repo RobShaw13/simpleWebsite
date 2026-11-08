@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First Reliance Bank | Home</title>
+    <meta name="description" content="First Reliance Bank is a South Carolina community bank for everyday banking, home and auto loans, and business financing.">
+
+    <!-- Author: Rob Shaw | Date: November 8, 2026 -->
+
+    <style>
+        :root {
+            --navy: #17365d;
+            --navy-soft: #24497b;
+            --page: #f0f3f7;
+            --ink: #333333;
+            --line: #cccccc;
+            --cream: #fff0c2;
+            --gold: #b8892a;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: var(--page);
+            color: var(--ink);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        a { color: var(--navy); }
+        a:focus-visible, .btn:focus-visible {
+            outline: 3px solid var(--gold);
+            outline-offset: 3px;
+        }
+        ::selection { background: var(--cream); color: var(--navy); }
+
+        /* Header and footer match page2.html so the site reads as one */
+        header {
+            background-color: var(--navy);
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+        header h1 { margin: 0 0 4px; }
+        header p { margin: 0 0 12px; }
+
+        nav a {
+            color: white;
+            margin: 10px;
+        }
+        nav a[aria-current="page"] { font-weight: bold; text-underline-offset: 6px; }
+
+        main {
+            max-width: 850px;
+            margin: auto;
+            padding: 25px;
+        }
+
+        h2 { color: var(--navy); margin: 0 0 8px; }
+        h3 { color: var(--navy); margin: 0 0 4px; }
+
+        section + section { margin-top: 48px; }
+
+        /* Hero */
+        .hero {
+            background-color: var(--navy);
+            color: white;
+            border-radius: 8px;
+            padding: 40px;
+            display: grid;
+            grid-template-columns: 1.15fr 1fr;
+            gap: 36px;
+            align-items: center;
+        }
+        .hero h2 {
+            color: white;
+            font-size: clamp(1.9rem, 5vw, 2.7rem);
+            line-height: 1.15;
+            text-wrap: balance;
+            margin-bottom: 14px;
+        }
+        .hero p { margin: 0 0 24px; max-width: 46ch; color: #e3eaf3; }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 22px;
+            border-radius: 8px;
+            font-weight: bold;
+            text-decoration: none;
+            margin: 0 8px 8px 0;
+            border: 2px solid transparent;
+            transition: background-color .2s ease-out, transform .2s ease-out;
+        }
+        .btn:hover { transform: translateY(-2px); }
+        .btn-primary { background: var(--cream); color: var(--navy); }
+        .btn-primary:hover { background: #ffe79a; }
+        .btn-ghost { border-color: rgba(255,255,255,.7); color: white; }
+        .btn-ghost:hover { background: rgba(255,255,255,.12); }
+
+        /* "How can we help" quick links, like the task shortcuts on large bank sites */
+        .help {
+            background: white;
+            color: var(--ink);
+            border-radius: 8px;
+            padding: 8px 20px;
+            list-style: none;
+            margin: 0;
+        }
+        .help li + li { border-top: 1px solid var(--line); }
+        .help a {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            padding: 14px 0;
+            text-decoration: none;
+            font-weight: bold;
+            color: var(--navy);
+        }
+        .help a span { font-weight: normal; color: #5a6675; }
+        .help a:hover .go { transform: translateX(4px); }
+        .go { transition: transform .2s ease-out; font-weight: bold; color: var(--navy); }
+        .hero .help-title { font-size: .85rem; color: #5a6675; margin: 0; padding: 12px 0 2px; max-width: none; }
+
+        /* Offerings as a list, not a wall of identical cards */
+        .offers {
+            background: white;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .offers li { padding: 18px 22px; display: flex; gap: 18px; align-items: baseline; justify-content: space-between; }
+        .offers li + li { border-top: 1px solid var(--line); }
+        .offers p { margin: 0; }
+        .offers .more { white-space: nowrap; font-weight: bold; }
+
+        .lede { max-width: 62ch; margin: 0 0 18px; }
+
+        /* Promo, same cream as page2 */
+        .promotion {
+            background-color: var(--cream);
+            padding: 22px 24px;
+            border-radius: 8px;
+        }
+        .promotion p { margin: 0 0 6px; }
+
+        /* Trust */
+        .trust { display: grid; grid-template-columns: 1.2fr 1fr; gap: 24px; }
+        .panel {
+            background: white;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            padding: 22px;
+        }
+        blockquote { margin: 0; font-size: 1.1rem; }
+        .cite { margin: 12px 0 0; font-size: .9rem; color: #5a6675; }
+        .towns { margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 6px 14px; }
+        .towns li::after { content: ""; }
+
+        .panel img { display: block; width: 100%; height: auto; border-radius: 8px; margin: 0 0 14px; }
+
+        footer {
+            background-color: var(--navy);
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 48px;
+        }
+        footer p { margin: 4px 0; }
+
+        @media (max-width: 720px) {
+            .hero { grid-template-columns: 1fr; padding: 28px 22px; }
+            .trust { grid-template-columns: 1fr; }
+            .offers li { flex-direction: column; gap: 4px; }
+            main { padding: 18px; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * { transition: none !important; }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>First Reliance Bank</h1>
+        <p>Banking for your everyday life and your next big goal.</p>
+
+        <nav aria-label="Main">
+            <a href="index.html" aria-current="page">Home</a>
+            <a href="page2.html">Products &amp; Services</a>
+            <a href="page3.html">About Us &amp; Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" aria-labelledby="hero-title">
+            <div>
+                <h2 id="hero-title">A South Carolina bank that knows your name.</h2>
+                <p>
+                    First Reliance Bank has helped individuals, families, and local businesses
+                    since 1999, with everyday accounts, home and auto loans, and business financing,
+                    backed by bankers from your own community.
+                </p>
+                <a class="btn btn-primary" href="page2.html">Explore Our Products</a>
+                <a class="btn btn-ghost" href="page3.html">Get in Touch</a>
+            </div>
+
+            <div>
+                <ul class="help" aria-label="Quick links">
+                    <li><p class="help-title">How can we help today?</p></li>
+                    <li><a href="page2.html">Open an account <span class="go" aria-hidden="true">&rarr;</span></a></li>
+                    <li><a href="page2.html">Buy a home <span class="go" aria-hidden="true">&rarr;</span></a></li>
+                    <li><a href="page2.html">Grow my business <span class="go" aria-hidden="true">&rarr;</span></a></li>
+                    <li><a href="page3.html">Talk to a banker <span class="go" aria-hidden="true">&rarr;</span></a></li>
+                </ul>
+            </div>
+        </section>
+
+        <section aria-labelledby="offer-title">
+            <h2 id="offer-title">What we offer</h2>
+            <p class="lede">From your first paycheck to your next big purchase, here is where most of our customers start.</p>
+            <ul class="offers">
+                <li>
+                    <div><h3>Everyday Checking</h3><p>Simple spending, bills, and direct deposit with a debit card and mobile banking.</p></div>
+                    <a class="more" href="page2.html">See details</a>
+                </li>
+                <li>
+                    <div><h3>Personal Savings</h3><p>Set money aside for a vacation, an emergency, or a goal you are working toward.</p></div>
+                    <a class="more" href="page2.html">See details</a>
+                </li>
+                <li>
+                    <div><h3>Home Mortgages</h3><p>Fixed-rate options and guidance for first-time homebuyers, start to finish.</p></div>
+                    <a class="more" href="page2.html">See details</a>
+                </li>
+                <li>
+                    <div><h3>Business Loans</h3><p>Financing for equipment, expansion, or daily expenses, with a loan officer by your side.</p></div>
+                    <a class="more" href="page2.html">See details</a>
+                </li>
+            </ul>
+        </section>
+
+        <section class="promotion" aria-labelledby="promo-title">
+            <h2 id="promo-title">New Customer Special</h2>
+            <p>Open an Everyday Checking account and get a $50 welcome bonus.</p>
+            <p><a href="page2.html">See how to qualify</a></p>
+        </section>
+
+        <section aria-labelledby="trust-title">
+            <h2 id="trust-title">Local, since 1999</h2>
+            <div class="trust">
+                <div class="panel">
+                    <blockquote>
+                        &ldquo;They walked us through our first mortgage step by step. It felt like talking to a neighbor, not a big bank.&rdquo;
+                    </blockquote>
+                    <p class="cite">Jordan M., Lexington, SC &middot; Sample review for a class project</p>
+                </div>
+                <div class="panel">
+                    <img src="branch.svg" alt="Illustration of a First Reliance Bank branch with white columns and a flag">
+                    <h3>Where you'll find us</h3>
+                    <ul class="towns">
+                        <li>Columbia,</li><li>West Columbia,</li><li>Lexington,</li><li>Florence,</li>
+                        <li>Greenville,</li><li>Myrtle Beach,</li><li>Mount Pleasant</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>First Reliance Bank | Student Website Project</p>
+        <p>All features and promotions shown are fictional for this assignment.</p>
+    </footer>
+</body>
+</html>
