@@ -181,10 +181,27 @@
         @media (prefers-reduced-motion: reduce) {
             * { transition: none !important; }
         }
+
+        /* Credit label for the class assignment */
+        .credit {
+            position: fixed;
+            right: 16px;
+            bottom: 16px;
+            z-index: 10;
+            background: #fff0c2;
+            color: #17365d;
+            border: 2px solid #b8892a;
+            border-radius: 8px;
+            padding: 6px 12px;
+            font-size: .85rem;
+            font-weight: bold;
+            box-shadow: 0 2px 6px rgba(0,0,0,.25);
+        }
     </style>
 </head>
 
 <body>
+    <div class="credit">Page by Robert Shaw</div>
     <header>
         <h1>First Reliance Bank</h1>
         <p>Banking for your everyday life and your next big goal.</p>

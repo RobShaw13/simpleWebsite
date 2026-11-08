@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-labelledby="t">
+  <title id="t">Illustration of a First Reliance Bank branch with columns and a flag</title>
+  <rect width="640" height="360" fill="#dfe8f3"/>
+  <rect y="300" width="640" height="60" fill="#c3d1e2"/>
+  <circle cx="540" cy="70" r="34" fill="#fff0c2"/>
+  <polygon points="120,150 320,60 520,150" fill="#17365d"/>
+  <rect x="120" y="150" width="400" height="16" fill="#24497b"/>
+  <g fill="#ffffff" stroke="#17365d" stroke-width="3">
+    <rect x="148" y="174" width="34" height="108"/>
+    <rect x="212" y="174" width="34" height="108"/>
+    <rect x="276" y="174" width="34" height="108" opacity="0"/>
+    <rect x="394" y="174" width="34" height="108"/>
+    <rect x="458" y="174" width="34" height="108"/>
+  </g>
+  <rect x="280" y="190" width="80" height="92" rx="4" fill="#17365d"/>
+  <rect x="290" y="200" width="28" height="82" fill="#fff0c2"/>
+  <rect x="322" y="200" width="28" height="82" fill="#fff0c2"/>
+  <rect x="100" y="282" width="440" height="18" fill="#24497b"/>
+  <rect x="80" y="300" width="480" height="14" fill="#17365d"/>
+  <rect x="318" y="14" width="4" height="48" fill="#17365d"/>
+  <polygon points="322,14 366,24 322,36" fill="#b8892a"/>
+  <text x="320" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#fff0c2" letter-spacing="2">FIRST RELIANCE</text>
+</svg>
